@@ -1,5 +1,8 @@
+#:include ground.kv
+
 FloatLayout:
     Background:
+        id: background
         canvas.before:
             Rectangle:
                 size: self.size
@@ -9,3 +12,19 @@ FloatLayout:
                 size: self.width, 800
                 pos: self.pos[0], self.pos[1] + self.height - 300
                 texture: self.cloud_texture
+            Rectangle:
+                size: self.width, 45
+                pos: self.pos[0], self.pos[1]
+                texture: self.ground_texture
+
+    Ground:
+        size_hint: None,None
+        size: 424, 45
+        pos: 200, 100
+        canvas.before:
+            Color:
+                rgba: 1,1,1,.2
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
